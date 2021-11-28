@@ -1,0 +1,15 @@
+ if (special(line) == IN)
+        {
+            if (line[0] == '{' ||line[1] == '{')
+            {
+                specialline[ndxspecial] = '{';
+                ndxspecial++;
+            }
+            else if (line[0] == '}'|| line[1] == '}')
+            {
+               if (specialline[ndxspecial-1] == '{')
+               {
+                   specialline[ndxspecial-1] = '-';
+                   ndxspecial--;
+               }
+            }
